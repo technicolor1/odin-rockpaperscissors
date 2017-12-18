@@ -1,0 +1,21 @@
+#title {
+  text-align: center;
+  font-size: 60px;
+  font-family: sans-serif;
+}
+
+#note {
+  text-align: center;
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+#button {
+  text-align: center;
+}
+
+button {
+  font-size: 50px;
+  cursor: pointer;
+  border-radius: 1rem;
+}

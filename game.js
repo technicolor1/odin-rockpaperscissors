@@ -1,16 +1,22 @@
+// TODO: User can select custom amount of rounds
+
 function game() {
       let userScore = 0;
       let computerScore = 0;
-      // TODO: User select custom rounds
-      for (i = 0; i < 10; i++) {
+      for (i = 0; i < 6; i++) {
           let userChoice = prompt("Rock paper or scissors?");
-          // Invalid statements for prompt.
-          // if (userChoice == null) {
-          //   return console.log("Game Cancelled! Quitting game...");
-          // } else if (isNaN(userChoice) == false) {
-          //   return console.log("Invalid input! Quitting game...");
-          // }
-          // TODO: Check if user selected either of three, otherwise return 1.
+          if (userChoice == null) {
+            console.error("Quitting game...");
+            return;
+          }
+          else if (
+            userChoice.toLowerCase() !== "rock" &&
+            userChoice.toLowerCase() !== "paper" &&
+            userChoice.toLowerCase() !== "scissors"
+          ) {
+            console.error("Invalid input! Quitting game...");
+            return;
+          }
 
           compare(userChoice);
 
@@ -57,20 +63,23 @@ function game() {
 
 
 
-              if (i == 9 && (userScore > computerScore)) {
+              if (i == 5 && (userScore > computerScore)) {
                 console.log("Your score: " +userScore);
                 console.log("Computer's score: " +computerScore);
                 console.log("You're winner!");
+                alert("You're winner!");
               }
-              else if (i == 9 && (computerScore > userScore)) {
+              else if (i == 5 && (computerScore > userScore)) {
                 console.log("Your score: " +userScore);
                 console.log("Computer's score: " +computerScore);
                 console.log("You're loser! Better luck next time!");
+                alert("You're loser! Better luck next time!");
               }
-              else if (i == 9 && (computerScore == userScore)){
+              else if (i == 5 && (computerScore == userScore)){
                 console.log("Your score: " +userScore);
                 console.log("Computer's score: " +computerScore);
                 console.log("Wow, a tie!");
+                alert("Wow, a tie!");
               }
 
             }

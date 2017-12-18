@@ -2,13 +2,24 @@
 <html>
 <head>
   <title>Rock Paper Scissors</title>
-  <!--Main jquery  -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="userstyles.css">
 </head>
+
 <body>
-  <div class="btn-nav">
-    <button type='button' class = 'btn'>Play Game</button>
+  <div id="title">
+    <h2>Rock Paper Scissors</h2>
   </div>
-    <script src="game.js"></script>
+
+  <div id="note">
+    <h4>Mac: Cmd + Opt + I </h4>
+    <h4>Windows: Ctrl + Shift + I </h4> 
+  </div>
+
+  <div id="button">
+    <button type='button' onClick="game()">Start Game</button>
+  </div>
+
+<script src="game.js"></script>
 </body>
+
 </html>
