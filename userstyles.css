@@ -13,15 +13,6 @@ html {
    font-family: Lato;
 }
 
-#container {
-   width: 800px;
-   height: 600px;
-   margin: 250px auto;
-   -webkit-box-shadow: 7px 7px 15px 1px rgba(0, 0, 0, 0.75);
-   -moz-box-shadow: 7px 7px 15px 1px rgba(0, 0, 0, 0.75);
-   box-shadow: 7px 7px 15px 1px rgba(0, 0, 0, 0.75);
-}
-
 h2 {
    color: white;
    text-align: center;
@@ -30,6 +21,11 @@ h2 {
 
 p {
    color: white;
+   font-size: 20px;
+}
+
+p span {
+   display: block;
 }
 
 h3 {
@@ -38,24 +34,64 @@ h3 {
 }
 
 #roundsSection {
-   padding: 10px;
-}
-
-#stripe>button {
+   padding: 17px;
 }
 
 button {
    cursor: pointer;
-   font-size: 40px;
+   margin-left: 20px 30px;
+   -webkit-transition-duration: 0.4s;
+   /* Safari */
+   transition-duration: 0.4s;
+}
+
+button:hover:enabled {
+   color: steelblue;
+}
+
+button:disabled {
+   cursor: not-allowed;
+}
+
+#rock {
+   font-size: 75px;
+}
+
+#paper {
+   font-size: 75px;
+
+}
+
+#scissors {
+   font-size: 75px;
+
 }
 
 #chevronUpBtn {
+   font-size: 40px;
+}
+
+#chevronUpBtn:hover {
+   color: blue;
+   -webkit-transition-duration: 0.4s;
+   /* Safari */
+   transition-duration: 0.4s;
 }
 
 #chevronDownBtn {
+   font-size: 40px;
+}
+
+#chevronDownBtn:hover {
+   color: red;
+   -webkit-transition-duration: 0.4s;
+   /* Safari */
+   transition-duration: 0.4s;
 }
 
 #restart {
+   padding: 10px 50px 10px 50px;
+   border-radius: 25px;
 }
 
 #result {
@@ -64,4 +100,5 @@ button {
 
 #score {
    color: white;
+   margin-bottom: 30px;
 }

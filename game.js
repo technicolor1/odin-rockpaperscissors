@@ -92,6 +92,8 @@ function game() {
    scoreDisplay.textContent = "Your Score: " + playerScore + "  Computer Score: " + computerScore;
 }
 
+
+
 function resetGame() {
    playerScore = 0;
    computerScore = 0;
