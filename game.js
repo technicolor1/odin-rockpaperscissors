@@ -43,7 +43,7 @@ function compare(playerGuess, computerGuess) {
       console.log("It is a tie!");
       result = "tie";
 
-   } else if (computerGuess == rock) {
+   } else if (computerGuess == "rock") {
       if (playerGuess == "paper") {
          console.log("Paper beats rock! You win!");
          result = "win";
@@ -105,6 +105,6 @@ function resetGame() {
 function computersChoice() {
    var options = ['rock', 'paper', 'scissors'];
    var randomNum = Math.floor(Math.random() * 3);
-   console.log(options[randomNum]);
+   console.log(options[randomNum] + " *** " + randomNum);
    return options[randomNum];
 }
