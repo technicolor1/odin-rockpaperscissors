@@ -10,6 +10,16 @@ html {
    margin: 0;
    background-repeat: no-repeat;
    background-attachment: fixed;
+   font-family: Lato;
+}
+
+#container {
+   width: 800px;
+   height: 600px;
+   margin: 250px auto;
+   -webkit-box-shadow: 7px 7px 15px 1px rgba(0, 0, 0, 0.75);
+   -moz-box-shadow: 7px 7px 15px 1px rgba(0, 0, 0, 0.75);
+   box-shadow: 7px 7px 15px 1px rgba(0, 0, 0, 0.75);
 }
 
 h2 {
@@ -18,8 +28,34 @@ h2 {
    font-size: 60px;
 }
 
-input {
-   font-size: 25px;
+p {
+   color: white;
+}
+
+h3 {
+   color: white;
+   font-weight: 900;
+}
+
+#roundsSection {
+   padding: 10px;
+}
+
+#stripe>button {
+}
+
+button {
+   cursor: pointer;
+   font-size: 40px;
+}
+
+#chevronUpBtn {
+}
+
+#chevronDownBtn {
+}
+
+#restart {
 }
 
 #result {

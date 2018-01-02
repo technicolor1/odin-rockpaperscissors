@@ -1,40 +1,40 @@
 var resultDisplay = document.querySelector("#result");
 var scoreDisplay = document.querySelector("#score");
-var buttons = document.getElementsByClassName("rPS");
+var buttons = document.querySelectorAll("#stripe");
 var rndsNum = document.querySelector("h3");
-var chevronUpBtn = document.getElementById("chevronUpBtn");
-var chevronDownBtn = document.getElementById("chevronDownBtn");
+var chevronUp = document.querySelector("#chevronUp");
+// var roundsCntr = document.getElementById("roundsCounter");
+// var setTheRnds = document.getElementById("setRnds");
+// var clearTheRnds = document.getElementById("clearRnds");
+// var actualTheRnds = document.querySelector("span");
 let playerScore = 0;
 let computerScore = 0;
 let resetBtnCount = 0;
-let Rnds = 3;
+let Rnds = rndsNum.textContent;
 
-
-chevronUpBtn.addEventListener("click", function() {
-   resultDisplay.textContent = "";
-   Rnds++;
-   rndsNum.innerHTML = Rnds;
-})
-
-chevronDownBtn.addEventListener("click", function() {
-   if (Rnds <= 3) {
-      Rnds = 3;
-      rndsNum.innerHTML = Rnds;
-      resultDisplay.textContent = "3 rounds or more, please!";
-   } else {
-      Rnds--;
-      rndsNum.innerHTML = Rnds;
+function checkPositive() {
+   while (rndsNum.textContent <= 0) {
+      rndsNum.textContent = 0;
    }
+}
+
+chevronUp.addEventListener("click", function(){
+   Rnds = rndsNum.textContent++;
 })
 
-for (var i = 0; i < buttons.length; i++) {
-   buttons[i].addEventListener("click", function() {
-      let choice = this.id;
+chevronDown.addEventListener("click", function(){
+   checkPositive();
+   Rnds = rndsNum.textContent--;
+})
+
+buttons.forEach((button) => {
+   button.addEventListener('click', (e) => {
+      let choice = button.textContent;
       compare(choice, computersChoice());
-      resultDisplay.textContent = "";
       game();
-   })
-}
+
+   });
+});
 
 function compare(playerGuess, computerGuess) {
    playerGuess = playerGuess.toLowerCase();
@@ -43,7 +43,7 @@ function compare(playerGuess, computerGuess) {
       console.log("It is a tie!");
       result = "tie";
 
-   } else if (computerGuess == rock) {
+   } else if (computerGuess == "rock") {
       if (playerGuess == "paper") {
          console.log("Paper beats rock! You win!");
          result = "win";
@@ -103,8 +103,13 @@ function resetGame() {
 }
 
 function computersChoice() {
-   var options = ['rock', 'paper', 'scissors'];
-   var randomNum = Math.floor(Math.random() * 3);
-   console.log(options[randomNum]);
-   return options[randomNum];
+   let computersChoice = Math.random();
+
+   if (computersChoice <= 0.34) {
+      return "rock";
+   } else if (computersChoice <= 0.67) {
+      return "paper";
+   } else {
+      return "scissors";
+   }
 }

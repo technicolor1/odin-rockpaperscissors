@@ -4,22 +4,31 @@
 <head>
    <title>Rock Paper Scissors</title>
    <link rel="stylesheet" href="userstyles.css">
+   <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
 </head>
 
 <body>
    <div id="container">
       <h2>Rock Paper Scissors</h2>
       <div>
-         <label for="roundsCounter">Number of Rounds: </label>
-         <input type="number" id="roundsCounter" min="3" placeholder="3 - 10 Recommended"></input>
-      </div>
-      <div>
-         <button id="setRnds">Set</button>
+         <div>
+            <p>Points to Win</p>
+         </div>
+         <div id="roundsSection">
+            <button id="chevronUpBtn">
+               <i class="fas fa-chevron-circle-up"></i>
+            </button>
+            <h3>3</h3>
+            <button id="chevronDownBtn">
+               <i class="fas fa-chevron-circle-down"></i>
+            </button>
+         </div>
       </div>
       <div id="stripe">
-         <button data-selection="rock" id="rock">Rock</button>
-         <button data-selection="paper" id="paper">Paper</button>
-         <button data-selection="scissors" id="scissors">Scissors</button>
+         <button id="rock" class="rPS"><i class="far fa-hand-rock"></i></button>
+         <button id="paper" class="rPS"><i class="far fa-hand-paper"></i></button>
+         <button id="scissors" class="rPS"><i class="far fa-hand-scissors"></i></button>
       </div>
       <div>
          <button id="restart" onclick="resetGame()">Restart Game</button>
@@ -28,7 +37,7 @@
       <div id="score"></div>
    </div>
 
-      <script src="game.js"></script>
+   <script src="game.js"></script>
 </body>
 
 </html>
